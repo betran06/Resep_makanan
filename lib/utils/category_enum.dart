@@ -1,7 +1,6 @@
 enum CategoryType {
   makanan,
   minuman,
-  kue,
 }
 
 // Konversi enum ke string
@@ -11,8 +10,6 @@ String categoryToString(CategoryType type) {
       return 'Makanan';
     case CategoryType.minuman:
       return 'Minuman';
-    case CategoryType.kue:
-      return 'kue';
   }
 }
 
@@ -23,8 +20,6 @@ CategoryType stringToCategory(String value) {
       return CategoryType.makanan;
     case 'minuman':
       return CategoryType.minuman;
-    case 'kue':
-      return CategoryType.kue;
     default:
       return CategoryType.makanan;
   }
