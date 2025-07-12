@@ -55,8 +55,6 @@ class _HomePageState extends State<HomePage> {
                   value: CategoryType.makanan, child: const Text("Makanan")),
               DropdownMenuItem(
                   value: CategoryType.minuman, child: const Text("Minuman")),
-              DropdownMenuItem(
-                  value: CategoryType.kue, child: const Text("kue")),
             ],
             onChanged: _onCategoryChanged,
           ),
