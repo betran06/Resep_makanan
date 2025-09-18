@@ -52,6 +52,17 @@ class DatabaseHelper {
       'category': 1, // minuman
       'ingredients': '1 bag Teh Celup, 2 sdt Gula, 50 ml air panas, 100 ml air dingin, Es batu'
     });
+<<<<<<< HEAD:lib/database/database_helper.dart
+=======
+
+    await db.insert('recipes', {
+      'title': 'brownies keju lumer',
+      'description': 'kue manis yang sangat enak',
+      'image': 'brownieskeju.jpg',
+      'category': 2, // kue
+      'ingredients': '360 ml susu cair full cream, 30 gr tepung maizena Rose Brand, 30 gr gula pasir Rose Brand, 50 gr tepung tapioka, Isi :1 box (200 ml) brownies kukus, 2 sdm keju spready, 1 sdm susu kental manis'
+    });
+>>>>>>> deddeb3 (update app recipe):lib/data/database/database_helper.dart
     
     await db.insert('recipes', {
       'title': 'mie goreng',

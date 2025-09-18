@@ -1,45 +1,143 @@
-# Miscellaneous
+# -------------------------
+# General / OS
+# -------------------------
+# Compiled class files
 *.class
 *.log
 *.pyc
 *.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
 
-# IntelliJ related
+# macOS
+.DS_Store
+
+# Editors
+.atom/
+.history
 *.iml
 *.ipr
 *.iws
 .idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code (uncomment if you don't want to track workspace settings)
 #.vscode/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Subversion
+.svn/
+
+# Swift Package Manager
+.swiftpm/
+
+# Misc
+migrate_working_dir/
+
+# -------------------------
+# Flutter / Dart / Pub
+# -------------------------
 .dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
 /build/
 
-# Symbolication related
-app.*.symbols
+# Flutter plugin / pod artifacts
+**/ios/Flutter/.last_build_id
 
-# Obfuscation related
+# Generated documentation
+**/doc/api/
+
+# Flutter plugin files
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android Studio build outputs (local)
+android/.gradle/
+android/.idea/
+android/local.properties
+
+# Android Studio will place build artifacts here (user-specific)
+android/app/debug
+android/app/profile
+android/app/release
+
+# Symbolication & obfuscation
+app.*.symbols
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# -------------------------
+# Platform specific
+# -------------------------
+# Android
+**/android/**/gradle-wrapper.properties
+**/android/**/gradle-wrapper.jar
+**/android/**/.gradle/
+**/android/**/local.properties
+**/android/**/captures/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner.xcworkspace/
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Flutter/engine/ # if present
+
+# macOS, Windows, Linux desktop build outputs
+macos/Flutter/ephemeral/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# -------------------------
+# Secrets / Keys / Configs
+# -------------------------
+# local properties and keystore files
+**/android/key.properties
+**/android/**/keystore.properties
+**/android/app/*.jks
+**/android/app/*.keystore
+**/*.keystore
+*.jks
+
+# Firebase / Google services
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Environment files
+.env
+.env.*
+.env.local
+*.env
+
+# CI credentials / tokens
+**/fastlane/Matchfile
+**/fastlane/*.p12
+**/fastlane/*.pem
+**/fastlane/credentials.json
+
+# -------------------------
+# Test & Coverage
+# -------------------------
+coverage/
+coverage.lcov
+test_reports/
+flutter_coverage/
+
+# -------------------------
+# Generated, caches, temp
+# -------------------------
+*.tmp
+*.temp
+*.backup
+*.orig
+
+# -------------------------
+# Optional: keep for reference (uncomment to ignore)
+# -------------------------
+# IntelliJ/WebStorm caches
+# .idea/
+
+# -------------------------
+# End
+# -------------------------

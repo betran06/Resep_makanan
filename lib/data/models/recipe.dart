@@ -1,4 +1,4 @@
-import '../utils/category_enum.dart';
+import 'category_enum.dart';
 
 class Recipe {
   final int? id;

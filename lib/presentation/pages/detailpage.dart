@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/recipe.dart';
-import '../utils/category_enum.dart';
+import '../../data/models/recipe.dart';
+import '../../data/models/category_enum.dart';
 
 class DetailPage extends StatelessWidget {
   final Recipe recipe;
