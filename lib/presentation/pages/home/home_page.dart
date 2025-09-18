@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // Struktur sesuai yang kita sepakati:
-import '../../../data/database/database_helper.dart'; // helper DB di folder /database
-import '../../../data/models/recipe.dart'; // model domain di /data/models
-import '../../../data/models/category_enum.dart'; // enum kategori di /core/constants
-import '../../components/recipe_card.dart'; // komponen UI domain di /presentation/components
+import '../../../data/database/database_helper.dart';           // helper DB di folder /database
+import '../../../data/models/recipe.dart';                 // model domain di /data/models
+import '../../../data/models/category_enum.dart';       // enum kategori di /core/constants
+import '../../components/recipe_card.dart';                // komponen UI domain di /presentation/components
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,9 +26,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _loadRecipes();
-    _searchController.addListener(
-      _applyFilters,
-    ); // sinkronkan pencarian real-time (tanpa debounce)
+    _searchController.addListener(_applyFilters); // sinkronkan pencarian real-time (tanpa debounce)
   }
 
   @override
@@ -57,12 +55,11 @@ class _HomePageState extends State<HomePage> {
     }
 
     if (query.isNotEmpty) {
-      list =
-          list.where((r) {
-            final name = (r.title).toLowerCase();
-            final desc = (r.description).toLowerCase();
-            return name.contains(query) || desc.contains(query);
-          }).toList();
+      list = list.where((r) {
+        final name = (r.title).toLowerCase();
+        final desc = (r.description).toLowerCase();
+        return name.contains(query) || desc.contains(query);
+      }).toList();
     }
 
     setState(() {
@@ -138,26 +135,23 @@ class _HomePageState extends State<HomePage> {
               _buildCategoryChips(),
               const SizedBox(height: 16),
               Expanded(
-                child:
-                    _visibleRecipes.isEmpty
-                        ? const Center(child: Text("Belum ada resep"))
-                        : GridView.builder(
-                          key: const PageStorageKey(
-                            'home_grid',
-                          ), // simpan posisi scroll
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 30,
-                                crossAxisSpacing: 30,
-                                childAspectRatio: 0.68,
-                              ),
-                          itemCount: _visibleRecipes.length,
-                          itemBuilder: (context, index) {
-                            final r = _visibleRecipes[index];
-                            return RecipeCard(recipe: r);
-                          },
+                child: _visibleRecipes.isEmpty
+                    ? const Center(child: Text("Belum ada resep"))
+                    : GridView.builder(
+                        key: const PageStorageKey('home_grid'), // simpan posisi scroll
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 30,
+                          crossAxisSpacing: 30,
+                          childAspectRatio: 0.68,
                         ),
+                        itemCount: _visibleRecipes.length,
+                        itemBuilder: (context, index) {
+                          final r = _visibleRecipes[index];
+                          return RecipeCard(recipe: r);
+                        },
+                      ),
               ),
             ],
           ),
