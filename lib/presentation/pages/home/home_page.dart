@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../data/database/database_helper.dart';           // helper DB di folder /database
 import '../../../data/models/recipe.dart';                 // model domain di /data/models
 import '../../../data/models/category_enum.dart';       // enum kategori di /core/constants
-import '../../components/recipe_card.dart';                // komponen UI domain di /presentation/components
+import '../../components/recipe/recipe_card.dart';                // komponen UI domain di /presentation/components
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
